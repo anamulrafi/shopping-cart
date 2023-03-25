@@ -15,7 +15,7 @@ function updatePhoneNumber(isIncrease){
 }
 function updatePhoneTotalPrice(currentNumberOfPhone){
     const phoneTotalPrice =  currentNumberOfPhone * 1219 ;
-    const previousCoverPrice = document.getElementById('btn-cover-price');
+    const previousCoverPrice = document.getElementById('btn-phone-price');
     previousCoverPrice.innerText = phoneTotalPrice;
 }
 
@@ -23,9 +23,15 @@ function updatePhoneTotalPrice(currentNumberOfPhone){
 document.getElementById('btn-phone-plus').addEventListener('click', function(){
     const newPhoneNumber = updatePhoneNumber(true);
      updatePhoneTotalPrice(newPhoneNumber);
+     //calcualate total
+      
+   calcualateSubTotal();
+
+
 })
 
 document.getElementById('btn-phone-minus').addEventListener('click', function(){
   const newPhoneNumber =  updatePhoneNumber(false);
     updatePhoneTotalPrice(newPhoneNumber);
+    calcualateSubTotal();
 })
